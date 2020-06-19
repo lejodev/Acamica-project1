@@ -1,0 +1,72 @@
+@import "menu-mobile";
+@import "square-test";
+
+.nav {
+    .cont {
+        .burger-menu {
+            margin-right: 25px;;
+            position: relative;
+            width: 18px;
+            height: 12px;
+            // border: 3px solid black;
+            // cursor: pointer;
+            .burger {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                width: 18px;
+                height: 2px;
+                background-color: black;
+                transition: .5s ;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 18px;
+                    height: 2px;
+                    background-color: black;
+                    transition: .5s ;
+                }
+                &::before {
+                    top: -3px;
+                }
+                &::after {
+                    bottom: -3px;
+                }
+            }
+            #input {
+                z-index: 100;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                width: 18px;
+                height: 12px;
+                &:checked ~ .burger{
+                    background-color: white;
+                    transition: .5s;
+                    &::before {
+                        transform: translateY(3px) rotate(-45deg);
+                        transform-origin: 9px 1px ;
+                        transition: .5s ;
+                    }
+                    &::after {
+                        transform:  translateY(-3px) rotate(45deg);
+                        transform-origin: 9px 1px ;
+                        transition: .5s ;
+                    }
+                }
+            }
+        }
+    }
+    .square {
+            @include sq;
+            // display: block;
+    }
+}

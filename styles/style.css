@@ -1,0 +1,299 @@
+body, * {
+  width: auto;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.heading nav {
+  width: auto;
+  height: 44px;
+  border-bottom: 1px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.heading nav img {
+  margin-left: 16px;
+}
+
+.heading nav .burger {
+  margin-right: 25px;
+}
+
+.heading nav .menu-container {
+  display: none;
+  top: 44px;
+  width: 100%;
+  height: 224px;
+  position: absolute;
+}
+
+.heading nav .menu-container .menu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  list-style: none;
+  width: 100%;
+  height: 224px;
+  background-color: blue;
+}
+
+.heading nav .menu-container .menu li {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heading nav #input:checked ~ .menu-container {
+  display: block;
+}
+
+.heading nav #input {
+  display: none;
+}
+
+.intro {
+  margin: 0px 16px;
+}
+
+.intro .title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+}
+
+.intro .title span {
+  display: block;
+}
+
+.intro p {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.intro .button {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+
+.episodes {
+  position: relative;
+  width: auto;
+  height: 1203.5px;
+  padding: 127px 11px 143px 11px;
+}
+
+.episodes .episodes-background {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 79%;
+  position: absolute;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  z-index: -2;
+}
+
+.episodes .episodes-container {
+  height: 80%;
+  width: 100%;
+  z-index: 3;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+}
+
+.episodes .episodes-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.de-deonde-venimos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  padding: 0 16px;
+  width: 100%;
+  height: 1000px;
+}
+
+.de-deonde-venimos .c1 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.de-deonde-venimos .c1 img {
+  bottom: 0;
+  width: 100%;
+}
+
+.de-deonde-venimos .c2 {
+  padding-top: 30%;
+}
+
+@media only screen and (min-width: 620px) {
+  body, * {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  main .heading nav {
+    width: auto;
+    height: 80px;
+    border-bottom: 1px solid #000;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .heading nav img {
+    width: 36px;
+    height: 36px;
+    margin-left: 16px;
+  }
+  main .heading nav #input, main .heading nav .burger {
+    display: none;
+  }
+  main .heading nav .menu-container {
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    position: relative;
+    margin-right: 23px;
+  }
+  main .heading nav .menu-container .menu {
+    background-color: #fff;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  main .heading nav .menu-container .menu li {
+    margin: 0 20px;
+  }
+  main .heading nav .menu-container .menu li:hover {
+    background-color: firebrick;
+  }
+  main .intro {
+    margin-left: 200px;
+    margin-top: 100px;
+  }
+  main .intro .title span {
+    display: inline;
+  }
+  main .intro p {
+    width: 628px;
+  }
+  main .intro .button {
+    position: relative;
+    height: 56px;
+    width: 226px;
+  }
+  main .episodes {
+    position: relative;
+    width: auto;
+    height: 1042.6px;
+    padding: 274px 100px 100px 100px;
+  }
+  main .episodes .episodes-background {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 86%;
+    position: absolute;
+    background-color: blue;
+    -webkit-transform: skewY(-6deg);
+            transform: skewY(-6deg);
+    -webkit-transform-origin: top right;
+            transform-origin: top right;
+    z-index: -2;
+  }
+  main .episodes .episodes-container {
+    height: 80%;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  main .de-deonde-venimos {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 0 200px;
+    width: 100%;
+    height: 300px;
+  }
+  main .de-deonde-venimos .c1 {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  main .de-deonde-venimos .c1 img {
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translateY(-180px);
+            transform: translateY(-180px);
+  }
+  main .de-deonde-venimos .c2 {
+    padding-top: 30%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

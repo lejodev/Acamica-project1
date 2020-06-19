@@ -1,0 +1,137 @@
+@import "fonts";
+body, *{
+    width: auto;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+// main {
+    .heading {
+        nav {
+            width: auto;
+            height: 44px;
+            border-bottom: 1px solid #000;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            
+            img {
+                margin-left: 16px;
+            }
+            .burger {
+                
+                margin-right: 25px;
+            }
+            .menu-container {
+                display: none;
+                top: 44px;
+                // left: 0;
+                width: 100%;
+                height: 224px;
+                position: absolute;
+                .menu {
+                    display: grid;
+                    grid-template-rows: repeat(4, 1fr);
+                    list-style: none;
+                    width: 100%;
+                    height: 224px;
+                    background-color: blue;
+                    li {
+                        font-family: $menu-item;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        padding-left: 16px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            #input:checked~.menu-container {
+                display: block;
+            }
+            #input {
+                display: none;
+            }
+        }
+
+    }
+    .intro {
+        margin: 0px 16px;
+        // background-color: #542;
+        .title {
+            font-family: $headings;
+            font-size: 36px;
+            // background-color: firebrick;
+            span {
+                display: block;
+                // background-color: floralwhite;
+            }
+        }
+        p {
+            font-family: $menu-item;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .button {
+            position: relative;
+            width: 100%;
+            height: 48px;
+        }
+    }
+    .episodes {
+        position: relative;
+        width: auto;
+        height: 1203.5px;
+        padding: 127px 11px 143px 11px;
+        .episodes-background {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 79%;
+            position: absolute;
+            // background-color: red;
+            transform: skewY(-6deg);
+            transform-origin: top right;
+            z-index: -2;
+        }
+        .episodes-container{
+            height: 80%;
+            width: 100%;
+            // background-color: gray;
+            z-index: 3;
+            position: relative;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .de-deonde-venimos {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        padding: 0 16px;
+        width: 100%;
+        height: 1000px;
+        // background-color: #234;
+        .c1 {
+            height: fit-content;
+            img {
+                bottom: 0;
+                width: 100%;
+                // transform: translateY(-180px);
+            }
+            // background-color: wheat;
+        }
+        .c2 {
+            padding-top: 30%;
+            // background-color: tomato;
+        }
+    }
+// }
+@import  "baserules-desktop";
