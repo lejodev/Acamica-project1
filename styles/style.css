@@ -1,6 +1,5 @@
 @media screen and (max-width: 620px) {
   body, * {
-    width: auto;
     padding: 0;
     border: 0;
     margin: 0;
@@ -78,13 +77,17 @@
   }
   .intro p {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
   }
   .intro .button {
     position: relative;
     width: 100%;
     height: 48px;
+    background: #00F3BB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    text-transform: uppercase;
   }
   .episodes {
     width: 100%;
@@ -106,6 +109,11 @@
     width: 100%;
     height: 100%;
   }
+  .episodes .title {
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #fff;
+    font-size: 36px;
+  }
   .de-deonde-venimos {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -122,6 +130,10 @@
   }
   .de-deonde-venimos img {
     width: 100%;
+  }
+  .de-deonde-venimos h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
   }
   .guests {
     display: -webkit-box;
@@ -198,6 +210,13 @@
   }
   .news h2 span {
     display: block;
+  }
+  .news button {
+    height: 48px;
+    background: #00F3BB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    text-transform: uppercase;
   }
   footer {
     padding: 15vh 3vw;

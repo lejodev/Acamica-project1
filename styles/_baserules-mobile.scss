@@ -1,7 +1,8 @@
 @media screen and (max-width: 620px) {
-    @import "fonts";
+@import "fonts";
+@import "components";
 body, *{
-    width: auto;
+    // width: auto;
     padding: 0;
     border: 0;
     margin: 0;
@@ -72,13 +73,14 @@ body, *{
         }
         p {
             font-family: $menu-item;
-            font-size: 16px;
+            font-size: 14px;
             display: inline-block;
         }
         .button {
             position: relative;
             width: 100%;
             height: 48px;
+            @include button-styling;
         }
     }
     .episodes {
@@ -95,6 +97,11 @@ body, *{
             width: 100%;
             height: 100%;
         }
+        .title {
+            font-family: $headings;
+            color: #fff;
+            font-size: 36px;
+        }
     }
     .de-deonde-venimos {
         display: flex;
@@ -105,6 +112,10 @@ body, *{
         justify-items: center;
         img {
             width: 100%;
+        }
+        h2 {
+            font-family: $headings;
+            font-size: 36px;
         }
     }
     .guests {
@@ -173,6 +184,10 @@ body, *{
             span {
                 display: block;
             }
+        }
+        button {
+            height: 48px;
+            @include button-styling;
         }
     }
     footer {
