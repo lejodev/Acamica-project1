@@ -145,6 +145,9 @@
   .guests .guests-container img {
     width: 100%;
   }
+  .systems {
+    text-align: center;
+  }
   .systems span {
     display: block;
   }
@@ -157,7 +160,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
     justify-items: center;
-    text-align: center;
   }
   .systems .systems-container h2 span {
     display: block;
@@ -196,6 +198,23 @@
   }
   .news h2 span {
     display: block;
+  }
+  footer {
+    padding: 15vh 3vw;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .social-media {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
   }
 }
 
