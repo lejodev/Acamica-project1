@@ -31,6 +31,7 @@
   .heading nav .menu-container {
     display: none;
     top: 44px;
+    left: 0;
     width: 100%;
     height: 224px;
     position: absolute;
@@ -40,16 +41,21 @@
     display: grid;
     -ms-grid-rows: (1fr)[4];
         grid-template-rows: repeat(4, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     list-style: none;
     width: 100%;
     height: 224px;
     background-color: blue;
   }
-  .heading nav .menu-container .menu li {
+  .heading nav .menu-container .menu li a {
+    text-decoration: none;
     font-family: "IBM Plex Mono", monospace;
     font-size: 16px;
+    color: #fff;
     text-transform: uppercase;
-    padding-left: 16px;
+    padding-left: 2vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -94,7 +100,14 @@
     font-size: 16px;
     text-transform: uppercase;
   }
-  .episodes {
+  .intro .button:hover {
+    -webkit-transition: .2s;
+    transition: .2s;
+    background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
+    background-image: linear-gradient(-90deg, #0000FE, #00F0B8);
+    color: #fff;
+  }
+  #episodios {
     width: 100%;
     height: 1400px;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0000FF), to(#0000A3));
@@ -109,13 +122,13 @@
     -webkit-transform-origin: top right;
             transform-origin: top right;
   }
-  .episodes .title, .episodes iframe {
+  #episodios .title, #episodios iframe {
     -webkit-transform: skewY(6deg);
             transform: skewY(6deg);
     width: 100%;
     height: 100%;
   }
-  .episodes .title {
+  #episodios .title {
     font-family: "IBM Plex Sans", sans-serif;
     color: #fff;
     font-size: 36px;
@@ -148,7 +161,7 @@
     font-family: "IBM Plex Mono", monospace;
     font-size: 14px;
   }
-  .guests {
+  #guests {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -157,41 +170,41 @@
         -ms-flex-flow: column;
             flex-flow: column;
   }
-  .guests h2 {
+  #guests h2 {
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 36px;
     padding: 0 2vw;
   }
-  .guests h2 span {
+  #guests h2 span {
     display: block;
   }
-  .guests .guests-container {
+  #guests .guests-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (1fr)[6];
         grid-template-rows: repeat(6, 1fr);
   }
-  .guests .guests-container img {
+  #guests .guests-container img {
     width: 100%;
   }
-  .systems {
+  #systems {
     margin: 5vh 0;
     padding: 0 2vw;
     text-align: center;
   }
-  .systems h2 {
+  #systems h2 {
     text-align: left;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 36px;
   }
-  .systems h2 span {
+  #systems h2 span {
     display: block;
   }
-  .systems h3 {
+  #systems h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 24px;
   }
-  .systems .systems-container {
+  #systems .systems-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -201,10 +214,10 @@
             flex-direction: column;
     justify-items: center;
   }
-  .systems .systems-container img {
+  #systems .systems-container img {
     padding-top: 9vh;
   }
-  .news {
+  #news {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -219,7 +232,7 @@
             transform-origin: top right;
     overflow: hidden;
   }
-  .news .top-skewed-backgound {
+  #news .top-skewed-backgound {
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
     -webkit-transform-origin: top right;
@@ -235,32 +248,40 @@
     position: absolute;
     z-index: -2;
   }
-  .news h2 {
+  #news h2 {
     font-family: "IBM Plex Sans", sans-serif;
     color: #fff;
     font-size: 36px;
     padding: 9vh 0;
   }
-  .news h2 span {
+  #news h2 span {
     display: block;
   }
-  .news button {
+  #news button {
     height: 48px;
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     text-transform: uppercase;
   }
+  #news button:hover {
+    -webkit-transition: .2s;
+    transition: .2s;
+    background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
+    background-image: linear-gradient(-90deg, #0000FE, #00F0B8);
+    color: #fff;
+  }
   footer {
-    padding: 15vh 3vw;
+    height: 30vh;
+    padding: 4vh 2vw;
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   footer p {
     font-family: "IBM Plex Mono", monospace;
