@@ -29,29 +29,29 @@
                 .menu-container {
                     // background-color: red;
                     .menu {
-                    list-style: none;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    justify-items: flex-end;
-                    li {
-                        a {
-                            font-family: $menu-item;
-                            font-size: 16px;
-                            text-decoration: none;
-                            text-transform: uppercase;
-                        }
-                        &:hover{
+                        list-style: none;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        justify-items: flex-end;
+                        li {
                             a {
-                                text-decoration: line-through;
-                                color: #00F3BB;
+                                font-family: $menu-item;
+                                font-size: 16px;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                            }
+                            &:hover{
+                                a {
+                                    text-decoration: line-through;
+                                    color: #00F3BB;
+                                }
+                            }
+                            &:active {
+                                a {
+                                    color: #060A24;
+                                }
                             }
                         }
-                        &:active {
-                            a {
-                                color: #060A24;
-                            }
-                        }
-                    }
                     }
                 }
             }
@@ -128,10 +128,10 @@
             }
         }
         #guests {
-            // background-color: red;
             display: flex;
             flex-direction: column;
             width: 100%;
+            position: relative;
             h2 {
                 padding: 4vh 0 4vh 10vw;
                 font-family: $headings;
@@ -139,16 +139,15 @@
             }
             .guests-container {
                 width: 100%;
+                height: 800px;
+                // height: 300px;
+                position: relative;
                 background-color: rosybrown;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 img {
                     width: 100%;
                     height: 100%;
-                }
-                .gsize {
-                    // width: 500px;
-                    height: 200px;
                 }
             }
         }

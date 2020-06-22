@@ -464,6 +464,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
+    position: relative;
   }
   #guests h2 {
     padding: 4vh 0 4vh 10vw;
@@ -472,6 +473,8 @@
   }
   #guests .guests-container {
     width: 100%;
+    height: 800px;
+    position: relative;
     background-color: rosybrown;
     display: -ms-grid;
     display: grid;
@@ -481,9 +484,6 @@
   #guests .guests-container img {
     width: 100%;
     height: 100%;
-  }
-  #guests .guests-container .gsize {
-    height: 200px;
   }
   #systems {
     padding: 20vh 10vw;
