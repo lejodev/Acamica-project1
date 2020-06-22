@@ -109,29 +109,32 @@
   }
   #episodios {
     width: 100%;
-    height: 1400px;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0000FF), to(#0000A3));
     background-image: linear-gradient(#0000FF, #0000A3);
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 0.2fr (1fr)[4];
-        grid-template-rows: 0.2fr repeat(4, 1fr);
-    padding: 9vh 2vw;
+    padding: 20vh 2vw;
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
     -webkit-transform-origin: top right;
             transform-origin: top right;
   }
-  #episodios .title, #episodios iframe {
+  #episodios .episodios-container {
+    top: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 0.3fr (1fr)[4];
+        grid-template-rows: 0.3fr repeat(4, 1fr);
+    position: relative;
+    row-gap: 10vh;
+  }
+  #episodios .episodios-container .title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 36px;
+    color: #fff;
+  }
+  #episodios .episodios-container {
     -webkit-transform: skewY(6deg);
             transform: skewY(6deg);
     width: 100%;
-    height: 100%;
-  }
-  #episodios .title {
-    font-family: "IBM Plex Sans", sans-serif;
-    color: #fff;
-    font-size: 36px;
   }
   .de-deonde-venimos {
     display: -webkit-box;
@@ -142,8 +145,8 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    -webkit-transform: translateY(-40px);
-            transform: translateY(-40px);
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
     padding: 0 2vw;
     justify-items: center;
   }
@@ -303,7 +306,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  main .heading nav {
+  .heading nav {
     width: auto;
     height: 80px;
     border-bottom: 1px solid #000;
@@ -315,127 +318,60 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  main .heading nav img {
+  .heading nav img {
     width: 36px;
     height: 36px;
-    margin-left: 16px;
   }
-  main .heading nav #input, main .heading nav .burger {
+  .heading nav label, .heading nav input {
     display: none;
   }
-  main .heading nav .menu-container {
-    top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: auto;
-    position: relative;
-    margin-right: 23px;
+  .heading nav .menu-container {
+    background-color: red;
   }
-  main .heading nav .menu-container .menu {
-    background-color: #fff;
-    height: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+  .heading nav .menu-container .menu {
+    list-style: none;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
-  main .heading nav .menu-container .menu li {
-    margin: 0 20px;
+  .intro {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
   }
-  main .heading nav .menu-container .menu li:hover {
-    background-color: firebrick;
-  }
-  main .intro {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-left: 10vw;
-    margin-top: 100px;
-  }
-  main .intro .title span {
-    display: inline;
-  }
-  main .intro p {
+  .intro p {
     width: 628px;
   }
-  main .intro .button {
-    margin-top: 4em;
-    position: relative;
+  .intro .button {
     height: 56px;
     width: 226px;
   }
-  main .episodes {
+  #episodios {
     position: relative;
-    width: auto;
-    height: 1042.6px;
-    padding: 274px 100px 100px 100px;
-  }
-  main .episodes .episodes-background {
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 86%;
-    position: absolute;
     background-color: blue;
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
-    -webkit-transform-origin: top right;
-            transform-origin: top right;
-    z-index: -2;
-  }
-  main .episodes .episodes-container {
-    height: 80%;
-    width: 100%;
-    z-index: 3;
-    position: relative;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: (1fr)[2];
-        grid-template-rows: repeat(2, 1fr);
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    -ms-grid-rows: 1fr (1fr)[2];
+        grid-template-rows: 1fr repeat(2, 1fr);
+    padding: 30vh 0;
   }
-  main .de-deonde-venimos {
-    display: -ms-grid;
-    display: grid;
-    background-color: #123;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    padding: 0 200px;
-    width: 100%;
-    height: 300px;
+  #episodios .title {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 1/1/2/3;
   }
-  main .de-deonde-venimos .c1 {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-  main .de-deonde-venimos .c1 img {
-    bottom: 0;
-    width: 100%;
-    -webkit-transform: translateY(-180px);
-            transform: translateY(-180px);
-  }
-  main .de-deonde-venimos .c2 {
-    padding-top: 30%;
+  #episodios .title, #episodios iframe {
+    -webkit-transform: skewY(6deg);
+            transform: skewY(6deg);
+    position: absolute;
   }
 }
 /*# sourceMappingURL=style.css.map */
