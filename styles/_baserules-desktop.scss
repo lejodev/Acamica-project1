@@ -1,12 +1,12 @@
 @media only screen and (min-width: 620px) {
+    @import "fonts";
+    @import "components";
     body, *{
         padding: 0;
         border: 0;
         margin: 0;
         box-sizing: border-box;
-        // background-color: #222;
     }
-    // main {
         .heading {
             nav {
                 // position: relative;
@@ -16,6 +16,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 align-items: center;
+                padding: 0 5vw;
                 // justify-content: space-between;
 
                 img {
@@ -26,23 +27,41 @@
                     display: none;
                 }
                 .menu-container {
-                    background-color: red;
+                    // background-color: red;
                     .menu {
                     list-style: none;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
+                    justify-items: flex-end;
+                    li {
+                        a {
+                            font-family: $menu-item;
+                            font-size: 16px;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                        }
+                    }
                     }
                 }
             }
 
         }
         .intro {
+            padding: 0 10vw;
             display: grid;
             grid-template-rows: repeat(3, 1fr);
+            align-items: center;
+            .title {
+                font-family: $headings;
+                font-size: 64px;
+            }
             p {
+                font-family: $menu-item;
+                font-size: 16px;
                 width: 628px;
             }
             .button {
+                @include button-styling;
                 height: 56px;
                 width: 226px;
             }
@@ -52,26 +71,141 @@
             background-color: blue;
             transform: skewY(-6deg);
             padding: 30vh 0;
-            z-index: 0;
+            // z-index: -1;
             .episodios-container {
                 transform: skewY(6deg);
-                background-color: yellow;
+                // background-color: yellow;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: .2fr repeat(2, 1fr);
-            .title {
-                grid-area: 1/1/2/3;
+                grid-template-rows: .5fr repeat(2, 1fr);
+                align-items: center;
+                padding: 0 5vw;
+                gap: 4vw;
+                .title {
+                    padding-left: 5vw;
+                    font-family: $headings;
+                    font-size: 48px;
+                    grid-area: 1/1/2/3;
+                    color: #fff;
+                }
             }
-            }
-            // .title, iframe {
-            //     transform: skewY(6deg);
-            // }
         }
         .de-deonde-venimos {
-            background-color: yellow;
+            width: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            // background-color: yellow;
             img {
                 z-index: 1;
             }
+            .texto {
+                justify-content: center;
+                row-gap: 2em;
+                display: flex;
+                flex-flow: column nowrap;
+                line-height: 1.5em;
+
+                h2 {
+                    font-family: $headings;
+                    font-size: 48px;
+                    padding-bottom: 1em;
+                }
+                p {
+                    font-family: $menu-item;
+                    font-size: 16px;
+                }
+            }
+        }
+        #guests {
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            h2 {
+                padding: 4vh 0 4vh 10vw;
+                font-family: $headings;
+                font-size: 48px;
+            }
+            .guests-container {
+                width: 100%;
+                background-color: rosybrown;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .gsize {
+                    // width: 500px;
+                    height: 200px;
+                }
+            }
+        }
+        #systems {
+            padding: 20vh 10vw;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                font-family: $headings;
+                font-size: 48px;
+                padding-bottom: 10vh;
+            }
+            .systems-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                justify-items: center;
+                .system {
+                    display: grid;
+                    grid-template-rows: repeat(2, 1fr);
+                    justify-items: center;
+                    align-items: center;
+                    h3 {
+                        font-family: $h3;
+                        font-size: 24px;
+                        display: inline;
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        #news {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            padding: 60vh 0;
+            overflow: hidden;
+            .top-skewed-backgound {
+                transform-origin: top right;
+                transform: skewY(-6deg);
+                z-index: -1;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: red;
+            }
+            .news-container {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                h2 {
+                    font-family: $headings;
+                    font-size: 48px;
+                    color: #fff;
+                }
+                button {
+                    @include button-styling;
+                    width: 400px;
+                }
+            }
+        }
+        footer {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
         }
     // }
 }

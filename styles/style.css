@@ -145,8 +145,8 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
     padding: 0 2vw;
     justify-items: center;
   }
@@ -217,8 +217,11 @@
             flex-direction: column;
     justify-items: center;
   }
-  #systems .systems-container img {
+  #systems .systems-container .system {
     padding-top: 9vh;
+  }
+  #systems .systems-container .system span {
+    display: block;
   }
   #news {
     position: relative;
@@ -251,23 +254,27 @@
     position: absolute;
     z-index: -2;
   }
-  #news h2 {
+  #news .news-container {
+    width: 100%;
+  }
+  #news .news-container h2 {
     font-family: "IBM Plex Sans", sans-serif;
     color: #fff;
     font-size: 36px;
     padding: 9vh 0;
   }
-  #news h2 span {
+  #news .news-container h2 span {
     display: block;
   }
-  #news button {
+  #news .news-container button {
+    width: 100%;
     height: 48px;
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     text-transform: uppercase;
   }
-  #news button:hover {
+  #news .news-container button:hover {
     -webkit-transition: .2s;
     transition: .2s;
     background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
@@ -317,6 +324,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 0 5vw;
   }
   .heading nav img {
     width: 36px;
@@ -325,28 +333,53 @@
   .heading nav label, .heading nav input {
     display: none;
   }
-  .heading nav .menu-container {
-    background-color: red;
-  }
   .heading nav .menu-container .menu {
     list-style: none;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+    justify-items: flex-end;
+  }
+  .heading nav .menu-container .menu li a {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
   }
   .intro {
+    padding: 0 10vw;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (1fr)[3];
         grid-template-rows: repeat(3, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .intro .title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 64px;
   }
   .intro p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
     width: 628px;
   }
   .intro .button {
+    background: #00F3BB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    text-transform: uppercase;
     height: 56px;
     width: 226px;
+  }
+  .intro .button:hover {
+    -webkit-transition: .2s;
+    transition: .2s;
+    background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
+    background-image: linear-gradient(-90deg, #0000FE, #00F0B8);
+    color: #fff;
   }
   #episodios {
     -webkit-transform-origin: top right;
@@ -355,31 +388,202 @@
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
     padding: 30vh 0;
-    z-index: 0;
   }
   #episodios .episodios-container {
     -webkit-transform: skewY(6deg);
             transform: skewY(6deg);
-    background-color: yellow;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 0.2fr (1fr)[2];
-        grid-template-rows: 0.2fr repeat(2, 1fr);
+    -ms-grid-rows: 0.5fr (1fr)[2];
+        grid-template-rows: 0.5fr repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 5vw;
+    gap: 4vw;
   }
   #episodios .episodios-container .title {
+    padding-left: 5vw;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 1/1/2/3;
+    color: #fff;
   }
   .de-deonde-venimos {
-    background-color: yellow;
+    width: auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .de-deonde-venimos img {
     z-index: 1;
+  }
+  .de-deonde-venimos .texto {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    row-gap: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    line-height: 1.5em;
+  }
+  .de-deonde-venimos .texto h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+    padding-bottom: 1em;
+  }
+  .de-deonde-venimos .texto p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+  }
+  #guests {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  #guests h2 {
+    padding: 4vh 0 4vh 10vw;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+  }
+  #guests .guests-container {
+    width: 100%;
+    background-color: rosybrown;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  #guests .guests-container img {
+    width: 100%;
+    height: 100%;
+  }
+  #guests .guests-container .gsize {
+    height: 200px;
+  }
+  #systems {
+    padding: 20vh 10vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #systems h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+    padding-bottom: 10vh;
+  }
+  #systems .systems-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  #systems .systems-container .system {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #systems .systems-container .system h3 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 24px;
+    display: inline;
+  }
+  #systems .systems-container .system h3 span {
+    display: block;
+  }
+  #news {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 60vh 0;
+    overflow: hidden;
+  }
+  #news .top-skewed-backgound {
+    -webkit-transform-origin: top right;
+            transform-origin: top right;
+    -webkit-transform: skewY(-6deg);
+            transform: skewY(-6deg);
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  }
+  #news .news-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  #news .news-container h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+    color: #fff;
+  }
+  #news .news-container button {
+    background: #00F3BB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 400px;
+  }
+  #news .news-container button:hover {
+    -webkit-transition: .2s;
+    transition: .2s;
+    background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
+    background-image: linear-gradient(-90deg, #0000FE, #00F0B8);
+    color: #fff;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 /*# sourceMappingURL=style.css.map */
