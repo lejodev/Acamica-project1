@@ -347,6 +347,13 @@
     text-decoration: none;
     text-transform: uppercase;
   }
+  .heading nav .menu-container .menu li:hover a {
+    text-decoration: line-through;
+    color: #00F3BB;
+  }
+  .heading nav .menu-container .menu li:active a {
+    color: #060A24;
+  }
   .intro {
     padding: 0 10vw;
     display: -ms-grid;
@@ -384,7 +391,7 @@
   #episodios {
     -webkit-transform-origin: top right;
             transform-origin: top right;
-    background-color: blue;
+    background-image: linear-gradient(225deg, #0000FF, #0000A3);
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
     padding: 30vh 0;
@@ -534,7 +541,7 @@
             justify-content: center;
     position: relative;
     z-index: 2;
-    padding: 60vh 0;
+    padding: 30vh 0;
     overflow: hidden;
   }
   #news .top-skewed-backgound {
@@ -546,13 +553,15 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-image: linear-gradient(225deg, #0000FF, #0000A3);
   }
   #news .news-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 10vh;
   }
   #news .news-container h2 {
     font-family: "IBM Plex Sans", sans-serif;
@@ -564,7 +573,8 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
     text-transform: uppercase;
-    width: 400px;
+    width: 345px;
+    height: 56px;
   }
   #news .news-container button:hover {
     -webkit-transition: .2s;
@@ -584,6 +594,10 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding: 4vh 5vw;
+  }
+  footer a {
+    padding: 0 1vw;
   }
 }
 /*# sourceMappingURL=style.css.map */

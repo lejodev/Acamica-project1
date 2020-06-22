@@ -40,6 +40,17 @@
                             text-decoration: none;
                             text-transform: uppercase;
                         }
+                        &:hover{
+                            a {
+                                text-decoration: line-through;
+                                color: #00F3BB;
+                            }
+                        }
+                        &:active {
+                            a {
+                                color: #060A24;
+                            }
+                        }
                     }
                     }
                 }
@@ -68,7 +79,7 @@
         }
         #episodios {
             transform-origin: top right;
-            background-color: blue;
+            background-image: linear-gradient(225deg, #0000FF, #0000A3);
             transform: skewY(-6deg);
             padding: 30vh 0;
             // z-index: -1;
@@ -177,7 +188,7 @@
             justify-content: center;
             position: relative;
             z-index: 2;
-            padding: 60vh 0;
+            padding: 30vh 0;
             overflow: hidden;
             .top-skewed-backgound {
                 transform-origin: top right;
@@ -186,11 +197,13 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background-color: red;
+                background-image: linear-gradient(225deg, #0000FF, #0000A3);
             }
             .news-container {
                 display: grid;
                 grid-template-rows: repeat(2, 1fr);
+                justify-items: center;
+                row-gap: 10vh;
                 h2 {
                     font-family: $headings;
                     font-size: 48px;
@@ -198,7 +211,8 @@
                 }
                 button {
                     @include button-styling;
-                    width: 400px;
+                    width: 345px;
+                    height: 56px;
                 }
             }
         }
@@ -206,6 +220,10 @@
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
+            padding: 4vh 5vw;
+            a {
+                padding: 0 1vw;
+            }
         }
     // }
 }
