@@ -349,29 +349,37 @@
     width: 226px;
   }
   #episodios {
-    position: relative;
+    -webkit-transform-origin: top right;
+            transform-origin: top right;
     background-color: blue;
     -webkit-transform: skewY(-6deg);
             transform: skewY(-6deg);
+    padding: 30vh 0;
+    z-index: 0;
+  }
+  #episodios .episodios-container {
+    -webkit-transform: skewY(6deg);
+            transform: skewY(6deg);
+    background-color: yellow;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    -ms-grid-rows: 1fr (1fr)[2];
-        grid-template-rows: 1fr repeat(2, 1fr);
-    padding: 30vh 0;
+    -ms-grid-rows: 0.2fr (1fr)[2];
+        grid-template-rows: 0.2fr repeat(2, 1fr);
   }
-  #episodios .title {
+  #episodios .episodios-container .title {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 1/1/2/3;
   }
-  #episodios .title, #episodios iframe {
-    -webkit-transform: skewY(6deg);
-            transform: skewY(6deg);
-    position: absolute;
+  .de-deonde-venimos {
+    background-color: yellow;
+  }
+  .de-deonde-venimos img {
+    z-index: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

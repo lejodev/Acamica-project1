@@ -48,19 +48,29 @@
             }
         }
         #episodios {
-            position: relative;
+            transform-origin: top right;
             background-color: blue;
             transform: skewY(-6deg);
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr repeat(2, 1fr);
             padding: 30vh 0;
+            z-index: 0;
+            .episodios-container {
+                transform: skewY(6deg);
+                background-color: yellow;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: .2fr repeat(2, 1fr);
             .title {
                 grid-area: 1/1/2/3;
             }
-            .title, iframe {
-                transform: skewY(6deg);
-                position: absolute;
+            }
+            // .title, iframe {
+            //     transform: skewY(6deg);
+            // }
+        }
+        .de-deonde-venimos {
+            background-color: yellow;
+            img {
+                z-index: 1;
             }
         }
     // }
