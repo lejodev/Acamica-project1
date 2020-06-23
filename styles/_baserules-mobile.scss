@@ -1,8 +1,7 @@
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
 @import "fonts";
 @import "components";
 body, *{
-    // width: auto;
     padding: 0;
     border: 0;
     margin: 0;
@@ -11,27 +10,15 @@ body, *{
 p {
     line-height: 1.5em;
 }
-// h1, h2, p, button {
-//     padding: 1.5em 0;
-// }
-// main {
     .heading {
         nav {
             width: auto;
             height: 44px;
-            border-bottom: 1px solid #000;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             justify-content: space-between;
             padding: 0 2vw;
-            // img {
-            //     margin-left: 16px;
-            // }
-            // .burger {
-                
-            //     margin-right: 25px;
-            // }
             .menu-container {
                 display: none;
                 top: 44px;
@@ -78,10 +65,8 @@ p {
         .title {
             font-family: $headings;
             font-size: 36px;
-            // background-color: firebrick;
             span {
                 display: block;
-                // background-color: floralwhite;
             }
         }
         p {
@@ -98,7 +83,6 @@ p {
     }
     #episodios {
         width: 100%;
-        // height: 1400px;
         background-image: linear-gradient(#0000FF, #0000A3);
         padding: 20vh 2vw;
         transform: skewY(-6deg);
@@ -120,7 +104,7 @@ p {
             width: 100%;
         }
     }
-    .de-deonde-venimos {
+    #de-deonde-venimos {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -162,19 +146,12 @@ p {
             img {
                 width: 100%;
             }
-            // .gsize {
-            //     background-color: red;
-            //     width: 100%;
-            //     height: 300px;
-            // }
         }
     }
     #systems {
         margin: 5vh 0;
         padding: 0 2vw;
         text-align: center;
-        // display: grid;
-        // grid-template-rows: auto;
         h2 {
             text-align: left;
             font-family: $headings;
@@ -203,12 +180,10 @@ p {
         position: relative;
         display: flex;
         flex-direction: column;
-        // justify-items: center;
         text-align: center;
         padding: 20vh 2vw;
         transform-origin: top right;
         overflow: hidden;
-        // z-index: 1;
         .top-skewed-backgound {
             transform: skewY(-6deg);
             transform-origin: top right;
@@ -257,6 +232,4 @@ p {
             grid-template-columns: repeat(5, 1fr);
         }
     }
-
-// }   
 }

@@ -1,4 +1,4 @@
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
   body, * {
     padding: 0;
     border: 0;
@@ -12,7 +12,6 @@
   .heading nav {
     width: auto;
     height: 44px;
-    border-bottom: 1px solid #000;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -136,7 +135,7 @@
             transform: skewY(6deg);
     width: 100%;
   }
-  .de-deonde-venimos {
+  #de-deonde-venimos {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -150,17 +149,17 @@
     padding: 0 2vw;
     justify-items: center;
   }
-  .de-deonde-venimos img {
+  #de-deonde-venimos img {
     width: 100%;
   }
-  .de-deonde-venimos h2 {
+  #de-deonde-venimos h2 {
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 36px;
   }
-  .de-deonde-venimos h2 span {
+  #de-deonde-venimos h2 span {
     display: block;
   }
-  .de-deonde-venimos p {
+  #de-deonde-venimos p {
     font-family: "IBM Plex Mono", monospace;
     font-size: 14px;
   }
@@ -305,7 +304,7 @@
   }
 }
 
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 768px) {
   body, * {
     padding: 0;
     border: 0;
@@ -316,7 +315,6 @@
   .heading nav {
     width: auto;
     height: 80px;
-    border-bottom: 1px solid #000;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
@@ -339,7 +337,7 @@
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    justify-items: flex-end;
+    justify-items: center;
   }
   .heading nav .menu-container .menu li a {
     font-family: "IBM Plex Mono", monospace;
@@ -422,17 +420,18 @@
     grid-area: 1/1/2/3;
     color: #fff;
   }
-  .de-deonde-venimos {
+  #de-deonde-venimos {
     width: auto;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
-  .de-deonde-venimos img {
+  #de-deonde-venimos img {
     z-index: 1;
+    width: 100%;
   }
-  .de-deonde-venimos .texto {
+  #de-deonde-venimos .texto {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -446,12 +445,12 @@
             flex-flow: column nowrap;
     line-height: 1.5em;
   }
-  .de-deonde-venimos .texto h2 {
+  #de-deonde-venimos .texto h2 {
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 48px;
     padding-bottom: 1em;
   }
-  .de-deonde-venimos .texto p {
+  #de-deonde-venimos .texto p {
     font-family: "IBM Plex Mono", monospace;
     font-size: 16px;
   }
@@ -463,8 +462,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
-    position: relative;
   }
   #guests h2 {
     padding: 4vh 0 4vh 10vw;
@@ -473,17 +470,17 @@
   }
   #guests .guests-container {
     width: 100%;
-    height: 800px;
     position: relative;
     background-color: rosybrown;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
   }
   #guests .guests-container img {
     width: 100%;
-    height: 100%;
   }
   #systems {
     padding: 20vh 10vw;
@@ -541,7 +538,7 @@
             justify-content: center;
     position: relative;
     z-index: 2;
-    padding: 30vh 0;
+    padding: 25vh 0;
     overflow: hidden;
   }
   #news .top-skewed-backgound {
