@@ -1,60 +1,41 @@
+body, * {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @media screen and (max-width: 768px) {
-  body, * {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
   p {
     line-height: 1.5em;
   }
-  .heading nav {
-    width: auto;
+  .heading .navbar {
+    padding: 0 2vw;
     height: 44px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0 2vw;
-  }
-  .heading nav .menu-container {
-    display: none;
-    top: 44px;
-    left: 0;
-    width: 100%;
-    height: 224px;
-    position: absolute;
-  }
-  .heading nav .menu-container .menu {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (1fr)[4];
-        grid-template-rows: repeat(4, 1fr);
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    list-style: none;
-    width: 100%;
-    height: 224px;
-    background-color: blue;
   }
-  .heading nav .menu-container .menu li a {
-    text-decoration: none;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-    padding-left: 2vw;
+  .heading .navbar .logo {
+    height: 24px;
+    width: 24px;
+  }
+  .heading .navbar .burger {
+    display: block;
+    width: 18px;
+    height: 12px;
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -62,11 +43,68 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .heading nav #input:checked ~ .menu-container {
+  .heading .navbar .burger .stick {
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .heading .navbar .burger .stick::before, .heading .navbar .burger .stick::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: #000;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  .heading .navbar .burger .stick::before {
+    position: absolute;
+    top: -5px;
+  }
+  .heading .navbar .burger .stick::after {
+    position: absolute;
+    bottom: -5px;
+  }
+  .heading .navbar #input:checked ~ .burger .stick {
+    background-color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .heading .navbar #input:checked ~ .burger .stick::before {
+    -webkit-transform: translateY(5px) rotate(-45deg);
+            transform: translateY(5px) rotate(-45deg);
+  }
+  .heading .navbar #input:checked ~ .burger .stick::after {
+    -webkit-transform: translateY(-5px) rotate(45deg);
+            transform: translateY(-5px) rotate(45deg);
+  }
+  .heading .navbar #input:checked ~ .menu {
     display: block;
   }
-  .heading nav #input {
+  .heading .navbar #input {
     display: none;
+  }
+  .heading .navbar .menu {
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    top: 44px;
+    background-color: blue;
+  }
+  .heading .navbar .menu li {
+    padding: 2vh 2vw;
+    list-style: none;
+  }
+  .heading .navbar .menu li a {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
   }
   .intro {
     padding: 5vh 2vw;
@@ -97,6 +135,16 @@
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-transform: uppercase;
   }
   .intro .button:hover {
@@ -123,12 +171,16 @@
     -ms-grid-rows: 0.3fr (1fr)[4];
         grid-template-rows: 0.3fr repeat(4, 1fr);
     position: relative;
-    row-gap: 10vh;
+    row-gap: 2vh;
   }
   #episodios .episodios-container .title {
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 36px;
     color: #fff;
+  }
+  #episodios .episodios-container iframe {
+    width: 100%;
+    height: 300px;
   }
   #episodios .episodios-container {
     -webkit-transform: skewY(6deg);
@@ -173,6 +225,9 @@
             flex-flow: column;
   }
   #guests h2 {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 36px;
     padding: 0 2vw;
@@ -265,15 +320,25 @@
   #news .news-container h2 span {
     display: block;
   }
-  #news .news-container button {
+  #news .news-container .button {
     width: 100%;
     height: 48px;
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-transform: uppercase;
   }
-  #news .news-container button:hover {
+  #news .news-container .button:hover {
     -webkit-transition: .2s;
     transition: .2s;
     background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));
@@ -305,13 +370,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  body, * {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
   .heading nav {
     width: auto;
     height: 80px;
@@ -331,7 +389,7 @@
   .heading nav label, .heading nav input {
     display: none;
   }
-  .heading nav .menu-container .menu {
+  .heading nav .menu {
     list-style: none;
     display: -ms-grid;
     display: grid;
@@ -339,17 +397,17 @@
         grid-template-columns: repeat(4, 1fr);
     justify-items: center;
   }
-  .heading nav .menu-container .menu li a {
+  .heading nav .menu li a {
     font-family: "IBM Plex Mono", monospace;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
   }
-  .heading nav .menu-container .menu li:hover a {
+  .heading nav .menu li:hover a {
     text-decoration: line-through;
     color: #00F3BB;
   }
-  .heading nav .menu-container .menu li:active a {
+  .heading nav .menu li:active a {
     color: #060A24;
   }
   .intro {
@@ -375,6 +433,16 @@
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-transform: uppercase;
     height: 56px;
     width: 226px;
@@ -395,6 +463,7 @@
     padding: 30vh 0;
   }
   #episodios .episodios-container {
+    width: 100%;
     -webkit-transform: skewY(6deg);
             transform: skewY(6deg);
     display: -ms-grid;
@@ -403,9 +472,9 @@
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: 0.5fr (1fr)[2];
         grid-template-rows: 0.5fr repeat(2, 1fr);
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     padding: 0 5vw;
     gap: 4vw;
   }
@@ -419,6 +488,10 @@
     -ms-grid-column-span: 2;
     grid-area: 1/1/2/3;
     color: #fff;
+  }
+  #episodios .episodios-container iframe {
+    width: 100%;
+    height: 252px;
   }
   #de-deonde-venimos {
     width: auto;
@@ -449,6 +522,7 @@
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 48px;
     padding-bottom: 1em;
+    line-height: 2rem;
   }
   #de-deonde-venimos .texto p {
     font-family: "IBM Plex Mono", monospace;
@@ -471,7 +545,6 @@
   #guests .guests-container {
     width: 100%;
     position: relative;
-    background-color: rosybrown;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
@@ -565,15 +638,25 @@
     font-size: 48px;
     color: #fff;
   }
-  #news .news-container button {
+  #news .news-container .button {
+    width: 345px;
+    height: 56px;
     background: #00F3BB;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-transform: uppercase;
-    width: 345px;
-    height: 56px;
   }
-  #news .news-container button:hover {
+  #news .news-container .button:hover {
     -webkit-transition: .2s;
     transition: .2s;
     background-image: -webkit-gradient(linear, right top, left top, from(#0000FE), to(#00F0B8));

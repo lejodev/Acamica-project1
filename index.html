@@ -17,11 +17,29 @@
 
 <body>
     <header class="heading">
-        <nav>
-            <img src="/images/logo.svg" alt="logo">
+        <nav class="navbar">
+            <img class="logo" src="/images/logo.svg" alt="logo">
+            <input type="checkbox" id="input">
+            <label for="input" class="burger">
+                <span class="stick"></span>
+            </label>
+            <ul class="menu">
+                <li>
+                    <a href="#episodios">Episodios</a>
+                </li>
+                <li>
+                    <a href="#de-deonde-venimos">nosotros</a>
+                </li>
+                <li>
+                    <a href="#guests">entrevistas</a>
+                </li>
+                <li>
+                    <a href="#systems">topicos</a>
+                </li>
+            </ul>
+            <!-- <img src="/images/logo.svg" alt="logo">
             <input type="checkbox" id="input">
             <label for="input" class="burger">☰</label>
-            <!-- <div class="square"></div> -->
             <div class="menu-container">
                 <ul class="menu">
                     <li>
@@ -37,7 +55,7 @@
                         <a href="#systems">topicos</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </nav>
     </header>
     <main>
@@ -45,19 +63,15 @@
             <h1 class="title"> Hello <s>world</s> <span>pale blue dot.</span> </h1>
             <p> El podcast semanal con las últimas noticias del mundo motor, deportes y actualidad, con contenido diario
                 en nuestras redes sociales.</p>
-                <a href="https://www.wikipedia.org/"><button class="button"> conoce mas</button></a>
+            <a href="https://www.wikipedia.org/" class="button"> conoce mas<!--<button class="button"> conoce mas</button>--></a>
         </section>
         <section id="episodios">
             <div class="episodios-container">
                 <h2 class="title">Episodios</h2>
-                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" width="100%"
-                    height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" width="100%"
-                    height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" width="100%"
-                    height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" width="100%"
-                    height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" class="frame"></iframe>
+                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" class="frame"></iframe>
+                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" class="frame"></iframe>
+                <iframe src="https://open.spotify.com/embed-podcast/episode/33EtCjAyIfqnKS1pQFC24y" class="frame"></iframe>
             </div>
 
             <!-- </div> -->
@@ -82,8 +96,8 @@
                 <img src="/images/grace-hopper.png" alt="">
                 <img src="/images/Katie-Bouman.png" alt="">
                 <img src="/images/Margaret_Hamilton.png" alt="">
-                <img src="/images/An E.R.A.Univac 1103 computer in the 1950s.png" alt="">
-                <img src="/images/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png"
+                <img src="/images/univac.png" alt="">
+                <img src="/images/eniac-operators.png"
                     alt="">
                 <img src="/images/susan-kare.png" alt="">
                 <!-- <div class="guest1 gsize"></div>
@@ -119,7 +133,7 @@
             <div class="top-skewed-backgound"></div>
             <div class="news-container">
                 <h2>Querés las <span>últimas</span> novedades? </h2>
-                <a href="https://www.spotify.com/co/"><button> Escuchá los episodios</button></a>
+                <a href="https://www.spotify.com/co/" class="button">Escuchá los episodios<!--<button> Escuchá los episodios</button>--></a>
             </div>
         </section>
     </main>

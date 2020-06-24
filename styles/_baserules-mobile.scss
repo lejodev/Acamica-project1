@@ -1,61 +1,93 @@
 @media screen and (max-width: 768px) {
 @import "fonts";
 @import "components";
-body, *{
-    padding: 0;
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 p {
     line-height: 1.5em;
 }
     .heading {
-        nav {
-            width: auto;
+        .navbar {
+            padding: 0 2vw;
+            // background-color: brown;
             height: 44px;
             display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
             justify-content: space-between;
-            padding: 0 2vw;
-            .menu-container {
-                display: none;
-                top: 44px;
-                left: 0;
-                width: 100%;
-                height: 224px;
-                position: absolute;
-                .menu {
-                    display: grid;
-                    grid-template-rows: repeat(4, 1fr);
-                    align-items: center;
-                    list-style: none;
-                    width: 100%;
-                    height: 224px;
-                    background-color: blue;
-                    li {
-                        a {
-                            text-decoration: none;
-                            font-family: $menu-item;
-                            font-size: 16px;
-                            color: #fff;
-                            text-transform: uppercase;
-                            padding-left: 2vw;
-                            display: flex;
-                            align-items: center;
-                        }
+            align-items: center;
+            .logo {
+                height: 24px;
+                width: 24px;
+            }
+            .burger {
+                display: block;
+                width: 18px;
+                height: 12px;
+                // border: 2px solid black;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                .stick {
+                    position: absolute;
+                    width: 18px;
+                    height: 2px;
+                    background-color: black;
+                    transition: 0.5s;
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 2px;
+                        background-color: #000;
+                        transition: .5s;
+                    }
+                    &::before {
+                        position: absolute;
+                        top: -5px;
+                    }
+                    &::after {
+                        position: absolute;
+                        bottom: -5px;
                     }
                 }
             }
-            #input:checked~.menu-container {
+            #input:checked ~ .burger .stick {
+                background-color: #fff;
+                transition: 0.5s;
+                &::before {
+                    transform: translateY(5px) rotate(-45deg);
+                }
+                &::after {
+                    transform: translateY(-5px) rotate(45deg);
+                }
+            }
+            #input:checked ~ .menu {
+                // background-color: brown;
                 display: block;
+                // transition: .5s;
             }
             #input {
                 display: none;
             }
+            .menu {
+                display: none;
+                left: 0;
+                top: 0;
+                width: 100%;
+                position: absolute;
+                top: 44px;
+                background-color: blue;
+                li {
+                    padding: 2vh 2vw;
+                    list-style: none;
+                    a {
+                        font-family: $menu-item;
+                        font-size: 16px;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
         }
-
     }
     .intro {
         padding: 5vh 2vw;
@@ -88,16 +120,20 @@ p {
         transform: skewY(-6deg);
         transform-origin: top right;
         .episodios-container {
+            top: 0;
+            display: grid;
+            grid-template-rows: .3fr repeat(4, 1fr);
+            position: relative;
+            row-gap: 2vh;
             .title {
                 font-family: $headings;
                 font-size: 36px;
                 color: #fff;
             }
-            top: 0;
-            display: grid;
-            grid-template-rows: .3fr repeat(4, 1fr);
-            position: relative;
-            row-gap: 10vh;
+            iframe {
+                width: 100%;
+                height: 300px;
+            }
         }
         .episodios-container {
             transform: skewY(6deg);
@@ -131,6 +167,7 @@ p {
         flex-flow: column;
         
         h2 {
+            flex-grow: 1;
             font-family: $headings;
             font-size: 36px;
             padding: 0 2vw;
@@ -209,7 +246,7 @@ p {
                     display: block;
                 }
             }
-            button {
+            .button {
                 width: 100%;
                 height: 48px;
                 @include button-styling;
